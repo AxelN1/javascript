@@ -37,4 +37,10 @@ console.log(basicDown);
 
 var word = "banana";
 var letters = ['b', 'a', 'n', 'a', 'n', 'a'];
-console.log(word)
+console.log(letters);
+
+// 08 - Template
+
+var age = 24;
+var template = `I'm ${age} years old`;
+console.log(template);
