@@ -43,4 +43,4 @@ console.log(letters);
 
 var age = 24;
 var template = `I'm ${age} years old`;
-console.log(template); 
+console.log(template);
