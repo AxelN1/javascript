@@ -12,3 +12,5 @@ objects.push("laptop");
 console.log(objects);
 
 objects.shift();
+
+console.log(objects);
