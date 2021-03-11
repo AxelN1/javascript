@@ -5,4 +5,4 @@ function checkIfEven(num) {
         console.log("odd");
     }
 }
-checkIfEven();
+checkIfEven(7);
