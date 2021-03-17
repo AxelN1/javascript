@@ -5,19 +5,39 @@
 - Exportez les deux fonctions graces aux modules, et importez les dans votre fichier précedant pour refaire marcher votre code
 - Affichez la table d'addition */
 
+// function multiply(num) {
+//     if (num == "") {
+//         console.log("error")
+//     }
+//     else if (isNaN(num)) {
+//         console.log("error")
+// ​
+//     } else {
+//         for (i = 1; i <= 10; i++) {
+//             console.log(num + " fois " + i + "=" + num * i)
+//         }
+//     }
+// }
+// ​
+// multiply(parseInt(process.argv[2]))
+
 function multiply(num) {
-    if (num == "") {
-        console.log("error")
-    }
-    else if (isNaN(num)) {
-        console.log("error")
-​
-    } else {
-        for (i = 1; i <= 10; i++) {
-            console.log(num + " fois " + i + "=" + num * i)
-        }
+    for (i = 0; i <= 10; i++) {
+        var result = parseInt(num) * 1;
+
+        console.log(num, "x", i, "=", result);
     }
 }
-​
-​
-multiply(parseInt(process.argv[2]))
+
+function addition(num) {
+    for (i = 0; i <= 10; i++) {
+        var result = parseInt(num) + 1;
+
+        console.log(num, "x", i, "=", result);
+    }
+}
+
+module.exports = {
+    multiply,
+    addition,
+}
