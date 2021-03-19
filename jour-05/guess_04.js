@@ -20,3 +20,31 @@ prompt.get(["Quel est le nombre le mystère ?"], function (err, res) {
     }
 
 });
+
+function onErr(err) {
+        console.log(err);
+        return;
+    }
+
+    function play(numStart, numEnd) {
+
+        var numRdm = Math.floor(Math.random() * (numEnd - numStart) + 1)
+
+        console.log(numRdm);
+
+        counter++;
+
+        if (playerNum < (numRdm)) {
+            console.log("C'est moins!");
+        } else if (playerNum > (numRdm)) {
+            console.log("C'est plus!");
+        } else if (playerNum = (numRdm)) {
+            console.log("Bravo !!");
+        }
+
+        if (counter <= 2) {
+            startPlay();
+        }
+    }
+
+startPlay();
