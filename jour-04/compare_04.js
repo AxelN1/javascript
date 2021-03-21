@@ -8,4 +8,6 @@ function compare(num1, num2) {
     }
 }
 
+compare(14, 12);
+compare(19, 96);
 compare(8, 8);

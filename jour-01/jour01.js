@@ -44,3 +44,11 @@ console.log(letters);
 var age = 24;
 var template = `I'm ${age} years old`;
 console.log(template);
+
+// Bonus
+
+var complexString = 'Citation d\'aujourd\'hui: \"Le js c\'est cool !\"';
+console.log(complexString);
+
+var bonjour = "Bonjour";
+console.log(bonjour.replace(/o/g, "a"));
