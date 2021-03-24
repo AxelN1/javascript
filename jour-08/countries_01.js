@@ -13,26 +13,3 @@ request.get("https://restcountries.eu/rest/v1/all", function (err, res, body) {
     console.log(names.join("-"));
 
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// var request = require("request");
-
-// request.get("https://restcountries.eu/rest/v2/all", function (err, res, body) {
-//     // console.log(err);
-//     console.log(res.statusCode);
-//     // console.log(body);
-// });
