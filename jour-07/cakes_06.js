@@ -26,7 +26,7 @@ var cakes = [
 	},
 ]
 
-var chocoCake = cakes.filter(function (elem) {
+var chocoCake = cakes.filter(function(elem) {
 
 	if (elem.flavor === "chocolate") {
 
