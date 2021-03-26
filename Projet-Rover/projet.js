@@ -15,21 +15,28 @@ var rover = {
     direction: "N",
     x: 0,
     y: 0,
+    travelLog: [],
 };
+​
+​
+​
+​
+​
+​
 ​
 //fonction pour tourner à droite
 ​
 function turnRight(rover) {
     if (rover.direction === "N") {
         rover.direction = "E";
-    }else if (rover.direction==="E"){
-        rover.direction="S"
-    }else if(rover.direction==="S"){
-        rover.direction="W"
-    }else{
-        rover.direction="N"
+    } else if (rover.direction === "E") {
+        rover.direction = "S";
+    } else if (rover.direction === "S") {
+        rover.direction = "W";
+    } else {
+        rover.direction = "N";
     }
-    console.log(rover);
+    // console.log(rover);
 };
 // turnRight(rover);
 ​
@@ -39,60 +46,110 @@ function turnRight(rover) {
 function turnLeft(rover) {
     if (rover.direction === "N") {
         rover.direction = "W";
-    }else if (rover.direction==="W"){
-        rover.direction="S"
-    }else if(rover.direction==="S"){
-        rover.direction="E"
-    }else{
-        rover.direction="N"
+    } else if (rover.direction === "W") {
+        rover.direction = "S";
+    } else if (rover.direction === "S") {
+        rover.direction = "E";
+    } else {
+        rover.direction = "N";
     }
 ​
-    console.log(rover);
+    // console.log(rover);
 };
 // turnLeft(rover);
 ​
 // fonction pour bouger 
 function moveFoward(rover) {
-   
-    if(rover.direction==="E"){
-            rover.y++
-    }else if (rover.direction==="W"){
-            rover.y--
-    }else if (rover.direction==="S"){
-        rover.x++
+    
+​
+     if (rover.direction === "E" && rover.x<9) {
+        rover.x++;
+    } else if (rover.direction === "W" && rover.x>0) {
+        rover.x--;
+    } else if (rover.direction === "S" && rover.y<9) {
+        rover.y++;
+    } else if(rover.direction==="N"&& rover.y>0){
+        rover.y--;
+    
     }else{
-        rover.x--
+        
+        return console.log("error")
+​
     }
 ​
-    console.log(rover)
+​
+    // console.log(rover);
 };
 ​
 // moveFoward(rover);
 ​
 ​
+// fonction pour reculer
+function moveBackWard(rover){
+    if (rover.direction==="N"){
+        rover.y++
+    }else if(rover.direction==="S"){
+        rover.y--
+    }else if(rover.direction==="E"){
+        rover.x--
+    }else{
+        rover.x++
+    }
+​
+}
+​
+​
 // fonction outil
 ​
-function pilotRover(pilot){
-    for(var i=0;i<pilot.length;i++){
-        if(pilot[i]==="l"){
-            turnLeft(rover)
-        }else if (pilot[i]==="r"){
-            turnRight(rover)
-        }else if (pilot[i]==="f"){
-            moveFoward(rover)
-        }else{
-            console.log("error")
-        }
+function pilotRover(pilot) {
+​
+    for (var i = 0; i < pilot.length; i++) {
+​
+        if (pilot[i] === "l") {
+            turnLeft(rover);
+        } else if (pilot[i] === "r") {
+            turnRight(rover);
+        } else if (pilot[i] === "f") {
+            moveFoward(rover);
+        } else if (pilot[i]=== "b"){
+            moveBackWard(rover)
+        }else {
+            console.log("error");
+            return
+        };
+        rover.travelLog.push("x:" + rover.x, "y:" + rover.y);
+         console.log(rover)
+   
+    };
+    
+    
         
-    }
+​
+​
+};
+​
+// pilotRover("ff");
+​
+​
+​
+var prompt = require("prompt");
+var option = {
+    name: "direction",
+    validator: /^[a-zA-Z]/,
+    description: "utiliser juste les lettre r, l et f",
 }
-pilotRover("lpoo")
-// Réduire
-
-
-
-
-
-
-
-
+​
+prompt.get(option,
+    function (err, res) {
+        if (err) {
+            console.error(err);
+            return
+​
+        }else {
+            pilotRover(res.direction)
+​
+        };
+​
+​
+​
+    });
